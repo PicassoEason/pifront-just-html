@@ -1,6 +1,115 @@
 body {
     background-color:#324254;
   }
-.title{
-    float: right;
+.maintext{
+    position: absolute;
+    width: 435px;
+    height: 58px;
+    left: 800px;
+    top: 150px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 58px;
+    /* identical to box height */
+    
+    letter-spacing: 0.15em;
+    
+    color: #FFFFFF;
+}
+
+
+.LeftTopTemp{
+    position: absolute;
+    width: 167px;
+    height: 167px;
+    left: 171px;
+    top: 313px;
+}
+.LeftDownHumidity{
+    position: absolute;
+    width: 142px;
+    height: 142px;
+    left: 171px;
+    top: 570px;
+ }
+.chartBox{
+    box-sizing: border-box;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    left: 650px;
+    top: 300px;
+}
+.liner{
+    position: absolute;
+    width: 505px;
+    height: 0px;
+    left: 184px;
+    top: 480px;
+}
+.TemText{
+    position: absolute;
+    width: 262px;
+    height: 40px;
+    left: 300px;
+    top: 274px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    
+    color: #FFDEA5;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+.HumText{
+    position: absolute;
+    width: 183px;
+    height: 53px;
+    left: 300px;
+    top: 500px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    
+    color: #FFDEA5;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.Temicon{
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    left: 500px;
+    top: 397px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 73px;
+}
+.Humicon{
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    left: 500px;
+    top: 650px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 73px;
+}
+.HumDataText{
+    font-size: 60px;
 }

@@ -49,32 +49,19 @@
     <div class="Humicon"><img src='https://i.imgur.com/CF7uCm4.png' height="50px" width="70px"></div>
     <div class="LeftTopTemp"><img src="https://i.imgur.com/wwoENrp.png" height="167px" width="167px"> </div>
     <div class="LeftDownHumidity"><img src="https://i.imgur.com/vIWLmw4.png" height="167px" width="167px"></div>
-    
     <!-- 拿氣溫資料 TM 改P -->
-    <div class="TemDataText"><p></p> </div>
-       <script>
+    <div class="TemDataText"><span style="font-size:500%;"><p></p></span> </div>
+    <div class="HumDataText"><span style="font-size:1100%;"><h6></h6></span> </div>
+      <script>
         fetch('http://localhost:4000/TUM').then(res=>{
           return res.json()
         })
           .then(data=>{
             data.forEach(user=>{
               const Tm=`<p>${user.temp}</p>`
+              const Hm=`<h6>${user.hunidity}</h6>`
               document.querySelector('p').insertAdjacentHTML('beforeend',Tm)
-            })
-          })
-          .catch(error=>console.log(error))
-      </script>
-    <!-- 拿濕度資料  HM 改P-->
-    <div class="HumDataText"><p></p></div>
-      <script>
-     
-        fetch('http://localhost:4000/TUM').then(res=>{
-          return res.json()
-        })
-          .then(data=>{
-            data.forEach(user=>{
-              const Hm=`<p>${user.hunidity}</p>`
-              document.querySelector('p').insertAdjacentHTML('beforeend',Hm)
+              document.querySelector('h6').insertAdjacentHTML('beforeend',Hm)
             })
           })
           .catch(error=>console.log(error))

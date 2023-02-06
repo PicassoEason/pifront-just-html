@@ -110,6 +110,17 @@ body {
     font-size: 60px;
     line-height: 73px;
 }
-.HumDataText{
-    font-size: 60px;
+.TemDataText {
+    color: white;
+    left: 23%;
+    top: 42%;
+    position: absolute;
+    font-weight: 600;
+  
+}
+.HumDataText {
+    position: absolute;
+    color: white;
+    left: 23%;
+    top: 70%;
 }

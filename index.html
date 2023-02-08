@@ -2,8 +2,8 @@
 <html lang="tw">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="60">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="50">
+
     <link rel="icon" href="https://i.imgur.com/dPhBp7b.png">
     <link rel="stylesheet" href="style.css">
     <title>樹梅派溫溼度練習</title>
@@ -26,7 +26,6 @@
       .chartCard {
         width: 100vw;
         height: calc(100vh - 40px);
-        background: rgba(54, 162, 235, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,23 +39,41 @@
       }
     </style>
   </head>
+  
   <body onLoad ="updateChart()">
-    <div class="title">
-      <h1>樹梅派溫溼度練習</h1>
-    </div>
-    <div class="LeftTopTemp">
-      <img src="https://i.imgur.com/wwoENrp.png">
-    </div>
-    <div class="LeftDownHumidity">
-      <img src="https://i.imgur.com/vIWLmw4.png">
-    </div>
+    <div class="maintext">樹莓派溫濕度實作</div>
+    <div class="TemText">Temperature</div>
+    <div class="HumText">Humidity</div>
+    <div class="liner"><img src='https://i.imgur.com/mwEcn13.png' height="4px" width="80%"></div>
+    <div class="Temicon"><img src='https://i.imgur.com/nwSl1d6.png' height="50px" width="70px"></div>
+    <div class="Humicon"><img src='https://i.imgur.com/CF7uCm4.png' height="50px" width="70px"></div>
+    <div class="LeftTopTemp"><img src="https://i.imgur.com/wwoENrp.png" height="167px" width="167px"> </div>
+    <div class="LeftDownHumidity"><img src="https://i.imgur.com/vIWLmw4.png" height="167px" width="167px"></div>
+    <!-- 拿氣溫資料 TM 改P -->
+    <div class="TemDataText"><span style="font-size:500%;"><p></p></span> </div>
+    <div class="HumDataText"><span style="font-size:1100%;"><h6></h6></span> </div>
+      <script>
+        fetch('http://localhost:4000/TUM').then(res=>{
+          return res.json()
+        })
+          .then(data=>{
+            data.forEach(user=>{
+              const Tm=`<p>${user.temp}</p>`
+              const Hm=`<h6>${user.hunidity}</h6>`
+              document.querySelector('p').insertAdjacentHTML('beforeend',Tm)
+              document.querySelector('h6').insertAdjacentHTML('beforeend',Hm)
+            })
+          })
+          .catch(error=>console.log(error))
+      </script>
+    <!-- 圖表部分 -->
     <div class="chartCard">
       <div class="chartBox">
-        <canvas id="myChart"></canvas> <!-- 圖表部分 -->
+        <canvas id="myChart"></canvas> 
       </div>
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
     <script src="app.js"></script>
-
+  
   </body>
 </html>
